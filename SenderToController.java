@@ -81,7 +81,24 @@ private static List<List<Object>> executeQuery(Sheets sheetsService, String quer
         return values;
     }
 
+ private static int executeUpdate(Sheets sheetsService, String query) throws IOException {
+        // Implement the logic to parse and execute the SQL-like query
 
+        return 0;
+    }
+
+    private static void printResult(List<List<Object>> result) {
+        if (result != null && !result.isEmpty()) {
+            for (List<Object> row : result) {
+                for (Object value : row) {
+                    System.out.print(value.toString() + "\t");
+                }
+                System.out.println();
+            }
+        } else {
+            System.out.println("No results found.");
+        }
+    }
 
     
 }
