@@ -152,5 +152,15 @@ function executeAlterTableQuery(query) {
   return "Altering the table...";
 }
 
+function executeDropTableQuery(query) {
+  return "Dropping the table...";
+}
 
+function executeCreateIndexQuery(query) {
+  return "Creating an index...";
+}
+
+function executeDropIndexQuery(query) {
+  return "Dropping the index...";
+}
 
