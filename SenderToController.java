@@ -70,5 +70,20 @@ public class GoogleSheetsExample {
                 .setApplicationName(APPLICATION_NAME)
                 .build();
     }
+private static List<List<Object>> executeQuery(Sheets sheetsService, String query) throws IOException {
+        ValueRange response = sheetsService.spreadsheets().values()
+                .get(SPREADSHEET_ID, "Sheet1")
+                .execute();
+        List<List<Object>> values = response.getValues();
+
+        // Implement the logic to parse and execute the SQL-like query
+
+        return values;
+    }
+
+
+
+    
+}
 
     
