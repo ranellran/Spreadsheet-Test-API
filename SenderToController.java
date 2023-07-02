@@ -62,4 +62,13 @@ public class GoogleSheetsExample {
         }
     }
 
+    private static Sheets buildSheetsService() throws IOException, GeneralSecurityException {
+        HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+        Credential credential = GoogleCredential.fromStream(new FileInputStream("path-to-credentials.json"))
+                .createScoped(Collections.singleton(SheetsScopes.SPREADSHEETS));
+        return new Sheets.Builder(httpTransport, JSON_FACTORY, credential)
+                .setApplicationName(APPLICATION_NAME)
+                .build();
+    }
 
+    
